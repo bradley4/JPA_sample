@@ -1,6 +1,7 @@
 package com.example.test1.ui;
 
 import com.example.test1.application.StudentService;
+import com.example.test1.dto.StudentCamelRequest;
 import com.example.test1.dto.StudentRequest;
 import com.example.test1.dto.StudentResponse;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,11 @@ public class StudentController {
 
     @PostMapping("/students")
     public StudentResponse createStudent(@RequestBody StudentRequest request) {
+        return studentService.createStudent(request);
+    }
+
+    @PostMapping("/students/camel")
+    public StudentResponse createStudentWithCamel(@RequestBody StudentCamelRequest request) {
         return studentService.createStudent(request);
     }
 }

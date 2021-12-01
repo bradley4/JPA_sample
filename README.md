@@ -9,13 +9,24 @@ http://localhost:8080/h2-console
 에 데이터 확인
 
 ```
-POST
+POST SNAKE_CASE
 curl: localhost:8080/students
 
 "name": "foo",
 "first_name": "doe",
 "last_name": "john",
 "phone_number": "000-111-2222"
+
+```
+
+```
+POST CAMEL_CASE
+curl: localhost:8080/students/camel
+
+"name": "foo",
+"firstName": "doe",
+"lastName": "john",
+"phoneNumber": "000-111-2222"
 
 ```
 
