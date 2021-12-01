@@ -12,7 +12,10 @@ http://localhost:8080/h2-console
 POST
 curl: localhost:8080/students
 
-name: "aaa"
+"name": "foo",
+"first_name": "doe",
+"last_name": "john",
+"phone_number": "000-111-2222"
 
 ```
 

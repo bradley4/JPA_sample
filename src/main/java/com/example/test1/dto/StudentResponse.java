@@ -10,8 +10,14 @@ public class StudentResponse {
     private Long id;
     private String name;
 
+    private String firstName;
+
+    private String lastName;
+
     public StudentResponse(Student student) {
         this.id = student.getId();
         this.name = student.getName();
+        this.firstName = student.getFirstName();
+        this.lastName = student.getLastName();
     }
 }

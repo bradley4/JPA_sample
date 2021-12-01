@@ -1,10 +1,8 @@
 package com.example.test1.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import javax.persistence.Column;
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +18,12 @@ public class Student {
 
     @Column(nullable = false)
     private String name;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String phoneNumber;
 
     private LocalDateTime createdAt;
 
@@ -37,6 +41,24 @@ public class Student {
 
     public Student(String name) {
         this.name = name;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public Student(String name, String firstName, String lastName, String phoneNumber, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+    public Student(String name, String firstName, String lastName, String phoneNumber) {
+        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
         this.createdAt = LocalDateTime.now();
         this.updatedAt = LocalDateTime.now();
     }

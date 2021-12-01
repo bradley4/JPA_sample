@@ -10,8 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
 
-import java.util.Optional;
-
 @Transactional(readOnly = true)
 @RequiredArgsConstructor
 @Service
@@ -37,7 +35,12 @@ public class StudentService {
 
     @Transactional
     public StudentResponse createStudent(StudentRequest request) {
-        Student student = new Student(request.getName());
+        Student student = new Student(
+                request.getName(),
+                request.getFirstName(),
+                request.getLastName(),
+                request.getPhoneNumber()
+        );
 
         Student saved = studentRepository.save(student);
         return new StudentResponse(saved);
